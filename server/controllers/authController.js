@@ -5,10 +5,14 @@ import jwt from "jsonwebtoken";
 const generateToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "1d" });
 
+// check if production or not
+const isProduction = process.env.NODE_ENV === "production";
+
+// set secure true if production
 const cookieOptions = {
   httpOnly: true,
-  sameSite: "strict",
-  secure: process.env.NODE_ENV === "production",
+  secure: isProduction, // required on HTTPS
+  sameSite: isProduction ? "none" : "lax",
   maxAge: 24 * 60 * 60 * 1000,
 };
 
