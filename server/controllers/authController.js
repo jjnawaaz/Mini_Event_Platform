@@ -7,9 +7,9 @@ const generateToken = (id) =>
 
 const cookieOptions = {
   httpOnly: true,
-  // sameSite: "strict",
-  // secure: process.env.NODE_ENV === "production",
-  // maxAge: 24 * 60 * 60 * 1000,
+  sameSite: "strict",
+  secure: process.env.NODE_ENV === "production",
+  maxAge: 24 * 60 * 60 * 1000,
 };
 
 // register user
@@ -121,7 +121,7 @@ export const getMe = async (req, res) => {
   });
 };
 
-// UPDATE ME
+// Additional route for future profile page -- update me
 export const updateMe = async (req, res) => {
   const { name, email, password } = req.body;
 

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  @apply bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e]  min-h-screen;
+}
+
+
+@layer components {
+  .nav-gradient {
+    @apply bg-transparent backdrop-blur-lg border-b-2 border-white;
+  }
+}
