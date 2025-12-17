@@ -12,7 +12,6 @@ export default function EventCard({ event, onRsvp, onCancel, onDelete }) {
 
   const availableSeats = event.capacity - event.attendees.length;
 
-  console.log(event.image);
   return (
     <div className="rounded-xl overflow-hidden border border-white/10 bg-white/10 backdrop-blur-md shadow-lg hover:shadow-xl hover:scale-[1.02] transition">
       {/* Event Image */}
