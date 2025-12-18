@@ -25,8 +25,8 @@ export default function Events() {
     try {
       await api.post(`/events/${eventId}/rsvp`);
       refreshEvents();
-    } catch (err) {
-      alert(err.response?.data?.message || "RSVP failed");
+    } catch {
+      alert("Try booking again");
     }
   };
 
@@ -34,8 +34,8 @@ export default function Events() {
     try {
       await api.delete(`/events/${eventId}/rsvp`);
       refreshEvents();
-    } catch (err) {
-      alert(err.response?.data?.message || "Cancel failed");
+    } catch {
+      alert("Cancel failed");
     }
   };
 
